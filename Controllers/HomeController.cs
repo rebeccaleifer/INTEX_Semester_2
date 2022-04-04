@@ -11,11 +11,11 @@ namespace Intex_Semester_2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private AppIdentityDBContext _context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(AppIdentityDBContext temp)
         {
-            _logger = logger;
+            _context = temp;
         }
 
         public IActionResult Index()
