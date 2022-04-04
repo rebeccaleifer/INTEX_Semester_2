@@ -1,0 +1,168 @@
+﻿@{
+    ViewData["Title"] = "Add Crash";
+}
+
+@model Intex_Semester_2.Models.InsertModelViewHere
+@*Form for adding a crash*@
+<div>
+    <form method="post">
+
+        <div asp-validation-summary="All"></div>
+
+        <label asp-for="CRASH_DATETIME">Crash Date:</label>
+        <input asp-for="CRASH_DATETIME" /><br />
+
+        <label asp-for="ROUTE">Route:</label>
+        <input asp-for="ROUTE" /><br />
+
+        <label asp-for="MILEPOINT">Milepoint:</label>
+        <input asp-for="MILEPOINT" /><br />
+
+        <label asp-for="LAT_UTM_Y">Latitude:</label>
+        <input asp-for="LAT_UTM_Y" /><br />
+
+        <label asp-for="LONG_UTM_X">Longitude:</label>
+        <input asp-for="LONG_UTM_X" /><br />
+
+        <label asp-for="MAIN_ROAD_NAME">Main road name:</label>
+        <input asp-for="MAIN_ROAD_NAME" /><br />
+
+        <label asp-for="CITY">City:</label>
+        <input asp-for="CITY" /><br />
+
+        <label asp-for="COUNTY_NAME">County Name:</label>
+        <input asp-for="COUNTY_NAME" /><br />
+
+        <label asp-for="CRASH_SEVERITY_ID">Crash Severity:</label>
+        <select asp-for="CRASH_SEVERITY_ID">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label asp-for="WORK_ZONE_RELATED">Work Zone related?:</label>
+        <select asp-for="WORK_ZONE_RELATED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="PEDESTRIAN_INVOLVED">Pedestrian involved?:</label>
+        <select asp-for="PEDESTRIAN_INVOLVED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="BICYCLIST_INVOLVED">Bicyclist involved?:</label>
+        <select asp-for="BICYCLIST_INVOLVED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="MOTORCYCLE_INVOLVED">Motorcycle involved?:</label>
+        <select asp-for="MOTORCYCLE_INVOLVED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="IMPROPER_RESTRAINT">Improper restraint?:</label>
+        <select asp-for="IMPROPER_RESTRAINT">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="UNRESTRAINED">Unrestrained?:</label>
+        <select asp-for="UNRESTRAINED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="DUI">DUI?:</label>
+        <select asp-for="DUI">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="INTERSECTION_RELATED">Intersection related?:</label>
+        <select asp-for="INTERSECTION_RELATED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="WILD_ANIMAL_RELATED">Wild animal related?:</label>
+        <select asp-for="WILD_ANIMAL_RELATED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="DOMESTIC_ANIMCAL_RELATED">Domestic animal related?:</label>
+        <select asp-for="DOMESTIC_ANIMCAL_RELATED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="OVERTURN_ROLLOVER">Overturn rollover?:</label>
+        <select asp-for="OVERTURN_ROLLOVER">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="COMMERCIAL_MOTOR_VEH_INVOLVED">Commercial motor vehical involved?:</label>
+        <select asp-for="COMMERCIAL_MOTOR_VEH_INVOLVED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="TEENAGE_DRIVER_INVOLVED">Teenage driver involved?:</label>
+        <select asp-for="TEENAGE_DRIVER_INVOLVED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="OLDER_DRIVER_INVOLVED">Older driver involved?:</label>
+        <select asp-for="OLDER_DRIVER_INVOLVED">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="NIGHT_DARK_CONDITION">Night/Dark conditions?:</label>
+        <select asp-for="NIGHT_DARK_CONDITION">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="SINGLE_VEHICLE">Single vehicle?:</label>
+        <select asp-for="SINGLE_VEHICLE">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="DISTRACTED_DRIVING">Distracted driving?:</label>
+        <select asp-for="DISTRACTED_DRIVING">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="DROWSY_DRIVING">Drowsy driving?:</label>
+        <select asp-for="DROWSY_DRIVING">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+        <label asp-for="ROADWAY_DEPARTURE">Roadway departure?:</label>
+        <select asp-for="ROADWAY_DEPARTURE">
+            <option value="TRUE">TRUE</option>
+            <option value="FALSE">FALSE</option>
+        </select>
+
+
+        <button class="btn btn-primary" type="submit">Submit CRASH</button>
+        @if (ViewBag.New == false)
+        {
+        <input type="hidden" asp-for="CRASH_ID" />
+        }
+
+    </form>
+</div>
+
