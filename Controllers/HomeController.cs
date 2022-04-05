@@ -11,29 +11,20 @@ namespace Intex_Semester_2.Controllers
 {
     public class HomeController : Controller
     {
-        private AppIdentityDBContext _context { get; set; }
-        //private CrashesDbContext _context { get; set; }
+        private AppIdentityDBContext _logincontext { get; set; }
+        private CrashesDbContext _context { get; set; }
 
         public HomeController(AppIdentityDBContext temp /*CrashesDbContext temp*/)
         {
-            _context = temp;
-            //private AppIdentityDBContext _context { get; set; }
-
-            //         public HomeController(AppIdentityDBContext temp)
+            _logincontext = temp;
         }
-    }
     
-
         public IActionResult Index()
         {
             var blah = _context.Crashes.ToList();
             return View(blah);
-    }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
+
 
     //get and post methods for the adding crash
     //[HttpGet]
