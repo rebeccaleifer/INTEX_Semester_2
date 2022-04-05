@@ -36,13 +36,13 @@ namespace Intex_Semester_2.Controllers
         }
 
         //get and post methods for the adding crash
-        [HttpGet]
-        public IActionResult Add()
-        {
+        //[HttpGet]
+        //public IActionResult Add()
+        //{
             //ViewBag.Crashes = crash.ToList();
 
-            return View();
-        }
+            //return View();
+        //}
 
         //make sure to add and save changes to the crashes in the database
         //[HttpPost]
