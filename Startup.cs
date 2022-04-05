@@ -33,6 +33,14 @@ namespace Intex_Semester_2
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppIdentityDBContext>();
+
+            services.AddDbContext<CrashesDbContext>(options =>
+            {
+                options.UseMySql(Configuration["ConnectionStrings:CrashesDbConnection"]);
+            });
+            services.AddDbContext<AppIdentityDBContext>(options =>
+               options.UseSqlite(Configuration["ConnectionStrings:IdentityConnection"]));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
