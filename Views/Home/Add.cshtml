@@ -2,7 +2,7 @@
     ViewData["Title"] = "Add Crash";
 }
 
-@model Intex_Semester_2.Models.Crash
+@model Intex_Semester_2.Models.InsertModelViewHere
 @*Form for adding a crash*@
 <div>
     <form method="post">
@@ -96,8 +96,8 @@
             <option value="FALSE">FALSE</option>
         </select>
 
-        <label asp-for="DOMESTIC_ANIMAL_RELATED">Domestic animal related?:</label>
-        <select asp-for="DOMESTIC_ANIMAL_RELATED">
+        <label asp-for="DOMESTIC_ANIMCAL_RELATED">Domestic animal related?:</label>
+        <select asp-for="DOMESTIC_ANIMCAL_RELATED">
             <option value="TRUE">TRUE</option>
             <option value="FALSE">FALSE</option>
         </select>
@@ -160,7 +160,7 @@
         <button class="btn btn-primary" type="submit">Submit CRASH</button>
         @if (ViewBag.New == false)
         {
-            <input type="hidden" asp-for="CRASH_ID" />
+        <input type="hidden" asp-for="CRASH_ID" />
         }
 
     </form>
