@@ -2,7 +2,9 @@ using Intex_Semester_2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+
 using Microsoft.AspNetCore.Identity;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,11 +30,15 @@ namespace Intex_Semester_2
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<AppIdentityDBContext>(options =>
-               options.UseSqlite(Configuration["ConnectionStrings:IdentityConnection"]));
+            services.AddDbContext<CrashesDbContext> (options =>
+            {
+                options.UseMySql(Configuration["ConnectionStrings:CrashesDbConnection"]);
+            });
+//             services.AddDbContext<AppIdentityDBContext>(options =>
+//                options.UseSqlite(Configuration["ConnectionStrings:IdentityConnection"]));
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppIdentityDBContext>();
+//             services.AddIdentity<IdentityUser, IdentityRole>()
+//                 .AddEntityFrameworkStores<AppIdentityDBContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
